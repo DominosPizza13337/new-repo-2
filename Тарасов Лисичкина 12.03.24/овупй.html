@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions</title>
+    <style>
+        body {
+            background-image: url('your_background_image.jpg');
+            background-size: cover;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+			 font-size: 24px; 
+        }
+        h1 {
+            color: white;
+			font-size: 24px;
+        }
+    </style>
+    <script>
+              let numbers = [];
+
+        function addNumber() {
+            let input = prompt("Введите целое число:");
+            if (input !== null && !isNaN(input) && Number.isInteger(parseFloat(input))) {
+                numbers.push(parseInt(input));
+            } else {
+                alert("Пожалуйста, введите целое число.");
+            }
+        }
+
+        function countElements() {
+            alert("Число элементов массива: " + numbers.length);
+        }
+
+        function findMinElement() {
+            alert("Минимальный элемент: " + Math.min(...numbers));
+        }
+
+        function findMaxElement() {
+            alert("Максимальный элемент: " + Math.max(...numbers));
+        }
+
+        function calculateSum() {
+            let sum = numbers.reduce((a, b) => a + b, 0);
+            alert("Сумма элементов: " + sum);
+        }
+
+        function calculateAverage() {
+            let sum = numbers.reduce((a, b) => a + b, 0);
+            let average = sum / numbers.length;
+            alert("Среднее значение: " + average.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <h1>Управление массивом чисел</h1>
+    <button onclick="addNumber()">Добавить число</button><br>
+    <a href="#" onclick="countElements()">Определить число элементов</a><br>
+    <a href="#" onclick="findMinElement()">Определить минимальный элемент</a><br>
+    <a href="#" onclick="findMaxElement()">Определить максимальный элемент</a><br>
+    <a href="#" onclick="calculateSum()">Определить сумму элементов</a><br>
+    <a href="#" onclick="calculateAverage()">Определить среднее значение</a><br>
+
+    <footer>Сделали Тарасов и Лисичкина </footer>
+</body>
+</html>
